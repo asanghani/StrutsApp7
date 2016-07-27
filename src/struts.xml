@@ -1,0 +1,40 @@
+<!DOCTYPE struts PUBLIC  
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<include file="login.xml"></include>
+	
+	<!-- <package name="default" namespace="/tutorials" extends="struts-default" > Also you can use wildecard here too
+    	<action name="get*" class="org.delta.action.{1}Action">
+        	<result name="success">/success.jsp</result>
+        	<result name="failure">/error.jsp</result>          
+    	</action>       
+	</package> -->
+	
+	<package name="default" namespace="/tutorials" extends="struts-default" >
+    	<action name="getTutorial" class="org.delta.action.TutorialAction">
+        	<result name="success">/success.jsp</result>
+        	<result name="failure">/error.jsp</result>          
+    	</action>       
+	</package>
+		
+	<package name="search" namespace="/" extends="struts-default" > <!-- If you have more jsp start with search**** then this will automatic solve problem -->
+    	<action name="search*">
+        	<result>/search{1}.jsp</result>   
+    	</action>       
+	</package>
+	
+	<!-- <package name="search" namespace="/" extends="struts-default" >          simple way to do
+    	<action name="search*">
+        	<result>/searchform1.jsp</result>   
+    	</action>       
+	</package> -->
+	
+	
+		
+</struts>
+
+
+
